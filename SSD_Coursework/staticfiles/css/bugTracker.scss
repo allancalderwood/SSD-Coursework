@@ -8,6 +8,21 @@ body{
   font-family: "Open Sans", sans-serif;
 }
 
+.btn{
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: color(primary);
+  height: 2.5rem;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  &:hover{
+    background-color: color(primary-dark);
+    transform: scale(1.1);
+  }
+}
+
 ////////////////////////// LOGIN CSS //////////////////////////////////
 
 #login-background{
@@ -75,8 +90,8 @@ body{
     input{
       border-radius: 0.5rem;
       border: 0;
-      padding: 0.5rem;
       width: 100%;
+      padding: 0.5rem;
       background-color: lighten(color(text), 60%);
       margin-bottom: 2rem;
       transition: 0.5s;
@@ -85,22 +100,13 @@ body{
         opacity: 0.5;
         background: color(primary);
       }
-      &.button{
-        cursor: pointer;
-        padding: 0.75rem;
-        background-color: color(primary);
-        width: 5rem;
-        height: 2.5rem;
-        color: white;
-        font-weight: bold;
-        &:hover{
-          background-color: color(primary-dark);
-          transform: scale(1.1);
-        }
-      }
       &#forgotPass{
         cursor: pointer;
         background: white;
+      }
+      &.btn{
+        background-color: color(primary) !important;
+        width: 5rem !important;
       }
     }
     a{
@@ -139,7 +145,7 @@ body{
 }
 /////////////////////// END OF LOGIN //////////////////////////////////
 
-////////////////////// LOGIN CSS //////////////////////////////////////
+////////////////////// LOGOUT CSS //////////////////////////////////////
 
 #logout-container{
   position: relative;
@@ -157,5 +163,38 @@ body{
   a{
     text-decoration: none;
     color: white;
+  }
+}
+ ////////////////// END OF LOGOUT ///////////////////////////////
+
+ ////////////////// PASSWORD CSS //////////////////////////////
+
+#password-form{
+  width: 100%;
+  border-radius: 0.4rem;
+  background-color: white;
+  box-shadow: -0.06rem 0.06rem 5.2rem -0.6rem rgba(0,0,0,0.6);
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+  color: color(text);
+
+  input{
+    border-radius: 0.5rem;
+    border: 0;
+    width: 60%;
+    padding: 0.5rem;
+    background-color: lighten(color(text), 60%);
+    margin-bottom: 2rem;
+    transition: 0.5s;
+    &:focus{
+      outline: none;
+      opacity: 0.5;
+      background: color(primary);
+    }
+    &.btn{
+      background-color: color(primary) !important;
+      width: 10rem !important;
+    }
   }
 }

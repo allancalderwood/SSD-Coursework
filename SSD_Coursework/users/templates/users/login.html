@@ -23,8 +23,8 @@
           {% csrf_token %}
           <input id="usernameInput" type="text" name="username" placeholder="Username"><br>
           <input id="passwordInput" type="password" name="password" placeholder="Password"><br>
-          <input class="button" type="submit" value="Login"><br>
-          <a href="{% url 'logout' %}"> Forgot your password?</a>
+          <input class="btn" type="submit" value="Login"><br>
+          <a href="{% url 'password_reset' %}"> Forgot your password?</a>
         </form>
 
       </div>
