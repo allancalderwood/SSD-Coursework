@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title> BugTracker - {{ title }} </title>
+    {% else %}
+        <title> BugTracker </title>
+    {% endif %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bugTracker.min.css' %}">
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

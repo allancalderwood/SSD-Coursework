@@ -1,0 +1,99 @@
+@import 'colors.scss';
+
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(295deg, color(primary) 0%, color(accent) 100%);
+  color: color(text);
+  font-family: "Open Sans", sans-serif;
+}
+
+#login-container{
+  top: 30vh;
+  position: relative;
+  margin: auto;
+  width: 60%;
+}
+
+#hero{
+  padding: 0;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 1rem;
+  h1{
+    font-size: 2.5rem;
+  }
+  p{
+    font-size: 1.1rem;
+    font-weight:100;
+    margin-bottom: 3rem;
+    b{
+      color: color(primary-dark);
+    }
+  }
+}
+
+#login-form{
+  width: 100%;
+  border-radius: 0.4rem;
+  background-color: white;
+  box-shadow: -0.06rem 0.06rem 5.2rem -0.6rem rgba(0,0,0,0.6);
+  margin: auto;
+  text-align: center;
+  display: flex;
+
+  #form-view{
+    padding-left: 1rem;
+    width:50%;
+    img{
+      width: 25rem;
+      height: 25rem;
+    }
+    span{
+      font-weight: bold;
+      color: color(primary);
+    }
+  }
+
+  #form-content{
+    padding: 1rem;
+    width:50%;
+    height:100%;
+  }
+
+  form{
+    padding-right: 2rem;
+    input{
+      border-radius: 0.5rem;
+      border: 0;
+      padding: 0.5rem;
+      width: 100%;
+      background-color: lighten(color(text), 60%);
+      margin-bottom: 2rem;
+      transition: 0.5s;
+      &:focus{
+        outline: none;
+        opacity: 0.5;
+        background: color(primary);
+      }
+      &.button{
+        cursor: pointer;
+        padding: 0.75rem;
+        background-color: color(primary);
+        width: 5rem;
+        height: 2.5rem;
+        &:hover{
+          background-color: color(primary-dark);
+        }
+      }
+      &#forgotPass{
+        cursor: pointer;
+        background: white;
+        color: color(accent-dark);
+      }
+    }
+  }
+}
