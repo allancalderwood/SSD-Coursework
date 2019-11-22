@@ -4,11 +4,17 @@ body{
   margin: 0;
   padding: 0;
   height: 100%;
+  color: color(text);
+  font-family: "Open Sans", sans-serif;
+}
+
+////////////////////////// LOGIN CSS //////////////////////////////////
+
+#login-background{
+  height: 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-image: linear-gradient(295deg, color(primary) 0%, color(accent) 100%);
-  color: color(text);
-  font-family: "Open Sans", sans-serif;
 }
 
 #login-container{
@@ -31,7 +37,7 @@ body{
     font-weight:100;
     margin-bottom: 3rem;
     b{
-      color: color(primary-dark);
+      color: color(accent);
     }
   }
 }
@@ -85,15 +91,18 @@ body{
         background-color: color(primary);
         width: 5rem;
         height: 2.5rem;
+        color: white;
+        font-weight: bold;
         &:hover{
           background-color: color(primary-dark);
+          transform: scale(1.1);
         }
       }
       &#forgotPass{
         cursor: pointer;
         background: white;
-        color: color(accent-dark);
       }
     }
   }
 }
+/////////////////////// END OF LOGIN //////////////////////////////////

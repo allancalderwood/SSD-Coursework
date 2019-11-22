@@ -2,31 +2,34 @@
 
 {% block content %}
 
+<div id="login-background">
 
-<div id="login-container">
-  <div id="login-form">
+  <div id="login-container">
+    <div id="login-form">
 
-    <div id="form-view">
-      {% load staticfiles %}
-      <img src="{% static "images/office.png" %}"/>
-      <p><span>BUG</span>Tracker</p>
-    </div>
-
-    <div id="form-content">
-      <div id="hero">
-        <h1>Welcome</h1>
-        <p><b>login</b> below to the service.</p>
+      <div id="form-view">
+        {% load staticfiles %}
+        <img src="{% static "images/office.png" %}"/>
+        <p><span>BUG</span>Tracker</p>
       </div>
 
-      <form>
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="password" name="password" placeholder="Password"><br>
-        <input class="button" type="submit" value="Login">
-        <input id="forgotPass" type="submit" value="Forgot your password?">
-      </form>
+      <div id="form-content">
+        <div id="hero">
+          <h1>Welcome</h1>
+          <p><b>login</b> below to the service.</p>
+        </div>
 
+        <form>
+          <input type="text" name="username" placeholder="Username"><br>
+          <input type="password" name="password" placeholder="Password"><br>
+          <input class="button" type="submit" value="Login">
+          <input id="forgotPass" type="submit" value="Forgot your password?">
+        </form>
+
+      </div>
     </div>
   </div>
+
 </div>
 
 {% endblock %}
