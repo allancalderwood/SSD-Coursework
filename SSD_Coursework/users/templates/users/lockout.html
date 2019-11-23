@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="login-background">
+  <div id="logout-container">
+    {% load staticfiles %}
+    <img src="{% static 'images/padlock.png' %}"/>
+    <h1>You have been locked out!</h1>
+      <p style="color:white"> You have unsuccessfully attempted to login {{ failure_limit }} times and have been locked
+          out for 10 minutes as a result. </p>
+  </div>
+</div>
+
+{% endblock %}
