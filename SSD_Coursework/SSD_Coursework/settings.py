@@ -34,6 +34,11 @@ AXES_RESET_ON_SUCCESS = True
 
 ALLOWED_HOSTS = []
 
+# EMAIL config
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+
 
 # Application definition
 
@@ -47,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd Party apps
-    'axes', # for IP verificiation and login attempts
+    'axes',  # for IP verification and login attempts
     # Custom Apps
     'users',
 ]
