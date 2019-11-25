@@ -1,0 +1,20 @@
+{% extends "base_home.html" %}
+
+{% block content %}
+
+    {% for ticket in details %}
+        <div class="ticket-details">
+          <h1>Bug Ticket</h1>
+          <h2 class="status">Status: {{ticket.status}}</h2>
+          <h2 class="priority">Priority: <span class="{{ticket.priority}}">{{ticket.priority}}</span></h2>
+          <h2 class="time">Created: {{ticket.time}}</h2>
+          <h3>Description: </h3>
+          <p>{{ticket.description}}</p>
+          <br><br>
+          <h4>Developer assigned: <span style="font-weight:normal">{{dev.get_full_name}}</span></h4>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock %}

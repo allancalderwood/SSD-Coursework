@@ -1,5 +1,21 @@
 {% extends "base_home.html" %}
 
 {% block content %}
-<h1>Tickets</h1>
+
+<div class="ticket-container">
+
+    {% for ticket in tickets %}
+        <div class="ticket">
+            <h1>Bug Ticket</h1>
+            <h3>Description:<h3>
+            <p>{{ticket.description}}</p>
+            <h2 class="status">Status: {{ticket.status}}</h2>
+            <h2 class="priority">Priority: <span class="{{ticket.priority}}">{{ticket.priority}}</span></h2>
+
+            <a href="../details/{{ticket.id}}" class="btn">Open Ticket</a>
+        </div>
+    {% endfor %}
+
+</div>
+
 {% endblock %}

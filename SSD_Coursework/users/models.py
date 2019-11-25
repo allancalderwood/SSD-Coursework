@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Role(models.Model):
 
-    DEVELOPER = 'DEV'
-    TESTER = 'TST'
-    CLIENT = 'CLI'
+    DEVELOPER = 'Developer'
+    TESTER = 'Tester'
+    CLIENT = 'Client'
 
     ROLE_TITLES = [
         ('DEV', 'Developer'),

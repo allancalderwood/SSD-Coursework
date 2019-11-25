@@ -21,6 +21,8 @@
         <a href="{% url 'tickets:home'%}"><span>BUG</span>Tracker</a>
       </div>
 
+      <h3>welcome {{ request.user.username }},<br>{{ user.role.title }} Account</h3>
+
       <ul>
         <li> <a href="{% url 'tickets:home'%}">
           <img src="{% static 'images/home.png' %}"/>
