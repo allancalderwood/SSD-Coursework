@@ -14,20 +14,42 @@
 </head>
 <body>
 
-  <div class="home-info">
-    <a id="logo" href="{% url 'tickets:home'%}"><span>BUG</span>Tracker</a>
-    <a id="logout" href="{% url 'logout'%}"><img src="{% static 'images/logout.png' %}"/></a>
-  </div>
-
   <div class="main-wrapper">
 
     <div class="sidebar">
+      <div id="logo">
+        <a href="{% url 'tickets:home'%}"><span>BUG</span>Tracker</a>
+      </div>
+
       <ul>
-        <li> <a href="{% url 'tickets:home'%}">Home</a> </li>
-        <li> <a href="{% url 'tickets:tickets'%}">Tickets</a> </li>
-        <li> <a href="{% url 'users:account'%}">Account</a> </li>
-        <li> <a href="{% url 'tickets:settings'%}">Settings</a> </li>
+        <li> <a href="{% url 'tickets:home'%}">
+          <img src="{% static 'images/home.png' %}"/>
+          Home
+        </a>
+       </li>
+        <li>
+          <a href="{% url 'tickets:tickets'%}">
+            <img src="{% static 'images/ticket.png' %}"/>
+            Tickets
+          </a>
+        </li>
+        <li>
+           <a href="{% url 'users:account'%}">
+             <img src="{% static 'images/user.png' %}"/>
+             Account
+           </a>
+         </li>
+        <li>
+          <a href="{% url 'tickets:settings'%}">
+            <img src="{% static 'images/settings.png' %}"/>
+            Settings
+          </a>
+        </li>
       </ul>
+
+      <div id="logout-wrapper">
+      <a id="logout" href="{% url 'logout'%}"><img src="{% static 'images/logout.png' %}"/>Sign out</a>
+      </div>
     </div>
 
     <div class="cntn">

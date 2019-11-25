@@ -6,6 +6,6 @@ app_name='users'
 
 
 urlpatterns = [
-    path('', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('account/', views.account, name='account'),
 ]
