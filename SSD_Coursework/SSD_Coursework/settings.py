@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from datetime import  timedelta
+from datetime import timedelta
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'axes',  # for IP verification and login attempts
     # Custom Apps
     'users',
+    'tickets',
 ]
 
 MIDDLEWARE = [
@@ -168,4 +169,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "staticfiles"),
 ]
 
-LOGIN_REDIRECT_URL = 'admin/'
+LOGIN_REDIRECT_URL = 'tickets/home'

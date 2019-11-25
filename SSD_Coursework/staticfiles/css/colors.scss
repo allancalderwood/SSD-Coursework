@@ -4,7 +4,9 @@ $colors:(
   accent: #3870ff,
   accent-dark: darken(#3870ff, 15%),
   text: #4a4a4a,
-  background: #f7f7f7
+  background: #f7f7f7,
+  header: #2e2e2e,
+  sidebar: #404040,
 );
 
 @function color($color-name){

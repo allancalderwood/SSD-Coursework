@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title> BugTracker - {{ title }} </title>
+    {% else %}
+        <title> BugTracker </title>
+    {% endif %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bugTracker.min.css' %}">
+</head>
+<body>
+
+  <div class="home-info">
+    <a id="logo" href="#"><span>BUG</span>Tracker</a>
+  </div>
+
+  <div class="main-wrapper">
+
+    <div class="sidebar">
+      <ul>
+        <li> <a href="{% url 'tickets:home'%}">Home</a> </li>
+        <li> <a href="{% url 'tickets:tickets'%}">Tickets</a> </li>
+        <li> <a href="{% url 'users:account'%}">Account</a> </li>
+        <li> <a href="{% url 'tickets:settings'%}">Settings</a> </li>
+      </ul>
+    </div>
+
+    <div class="cntn">
+        {% block content %}{% endblock %}
+    </div>
+
+  </div>
+
+</body>
+</html>
