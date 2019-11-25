@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Ticket, Comment
+from .forms import CommentForm
 
 # Register your models here.
 admin.site.register(Ticket)

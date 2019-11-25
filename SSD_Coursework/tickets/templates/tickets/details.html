@@ -3,18 +3,45 @@
 {% block content %}
 
     {% for ticket in details %}
-        <div class="ticket-details">
-          <h1>Bug Ticket</h1>
-          <h2 class="status">Status: {{ticket.status}}</h2>
-          <h2 class="priority">Priority: <span class="{{ticket.priority}}">{{ticket.priority}}</span></h2>
-          <h2 class="time">Created: {{ticket.time}}</h2>
-          <h3>Description: </h3>
-          <p>{{ticket.description}}</p>
-          <br><br>
-          <h4>Developer assigned: <span style="font-weight:normal">{{dev.get_full_name}}</span></h4>
-        </div>
+    <div class="ticket-details">
+      <h1>Bug Ticket</h1>
+
+      {% if role == "TST" and ticket.status == "Resolved" %}
+      <a href="../details/{{ticket.id}}" class="btn-blue">Close this ticket</a>
+
+      {% elif role == "TST" and ticket.status == "Closed" %}
+      <a href="../details/{{ticket.id}}" class="btn-blue">Re-open this ticket</a>
+
+      {% elif role == "DEV" and ticket.status == "Open" %}
+      <a href="../details/{{ticket.id}}" class="btn-blue">Resolve this ticket</a>
+      {% endif %}
+
+      <h2 class="status">Status: {{ticket.status}}</h2>
+
+      <h2 class="priority">Priority: <span class="{{ticket.priority}}">{{ticket.priority}}</span></h2>
+      <h2 class="time">Created: {{ticket.time}}</h2>
+      <h3>Description: </h3>
+      <p>{{ticket.description}}</p>
+      <br><br>
+      <h4>Developer assigned: <span style="font-weight:normal">{{dev.get_full_name}}</span></h4>
+    {% endfor %}
+    </div>
+
+    {% for comment in comments %}
+    <div class="comments">
+        <h2 class="author">Author: <span>{{comment.author.get_full_name}}</span></h2><br><br>
+        <br>
+        {{comment.content}}
+        <h2 class="time">Posted: {{comment.time}}</h2>
+    </div>
     {% endfor %}
 
-
+    <div class="comment">
+      <form method="post">
+        {% csrf_token %}
+        <textarea id="content" type="textarea" name="content" placeholder="Add a comment..." required id="id_content" maxlength="250"></textarea>
+        <input class="btn" type="submit" value="Comment"><br>
+      </form>
+    </div>
 
 {% endblock %}
