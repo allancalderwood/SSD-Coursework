@@ -15,7 +15,8 @@
 <body>
 
   <div class="home-info">
-    <a id="logo" href="#"><span>BUG</span>Tracker</a>
+    <a id="logo" href="{% url 'tickets:home'%}"><span>BUG</span>Tracker</a>
+    <a id="logout" href="{% url 'logout'%}"><img src="{% static 'images/logout.png' %}"/></a>
   </div>
 
   <div class="main-wrapper">

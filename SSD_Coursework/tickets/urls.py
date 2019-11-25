@@ -3,6 +3,7 @@ from . import views
 
 app_name = 'tickets'
 
+
 urlpatterns = [
     path('home/', views.home, name="home"),
     path('tickets/', views.tickets, name="tickets"),

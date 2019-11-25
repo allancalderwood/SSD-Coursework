@@ -227,6 +227,14 @@ body{
       color: color(primary);
     }
   }
+  #logout{
+    position: absolute;
+    right: 2rem;
+    img{
+      width:2rem;
+      height:2rem;
+    }
+  }
 }
 
 .main-wrapper{
@@ -265,5 +273,5 @@ body{
   background-color: color(background);
   width: 75%;
   height: 100%;
-  padding-top: 2rem;
+  padding: 2rem;
 }
