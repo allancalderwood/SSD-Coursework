@@ -417,6 +417,10 @@ body{
     bottom: 0;
     left: 30%;
     right: 30%;
+    color: color(primary);
+    span{
+      color: color(accent);
+    }
   }
   p{
     word-wrap: break-word;
