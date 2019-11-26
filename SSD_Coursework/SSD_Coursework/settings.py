@@ -26,6 +26,11 @@ SECRET_KEY = 'n&m7z%klaazi!&$!an+(=9u@96c=%0rd++8d**zs6@gddhh#oa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# SESSION configs
+SESSION_COOKIE_AGE = 10*1 # i.e. 10 minute sessions
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_SAVE_EVERY_REQUEST = True
+
 # AXES config
 AXES_ENABLED = True
 AXES_FAILURE_LIMIT = 5
@@ -36,7 +41,6 @@ AXES_RESET_ON_SUCCESS = True
 ALLOWED_HOSTS = []
 
 # EMAIL config
-
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 

@@ -1,5 +1,39 @@
 {% extends "base_home.html" %}
 
 {% block content %}
-<h1>Home</h1>
+
+<div class="home-container">
+
+  <h1>Welcome</h1>
+  <h2>{{ request.user.get_full_name }}</h2>
+
+  {% load static %}
+  {% if role == "TST" %}
+  <h3>Total number of resolved and closed tickets: </h3>
+  <div class="row">
+    <img src="{% static 'images/ticket.png' %}"/>
+    <p> {{ tickets|length }} </p>
+  </div>
+  {% elif role == "DEV" %}
+  <h3>Number of your associated tickets</h3>
+  <div class="row">
+    <img src="{% static 'images/ticket.png' %}"/>
+    <p> {{ tickets|length }}  </p>
+  </div>
+  {% else %}
+  <h3>Number of created tickets</h3>
+  <div class="row">
+    <img src="{% static 'images/ticket.png' %}"/>
+    <p> {{ tickets|length }}  </p>
+  </div>
+  {% endif %}
+
+  <h3>Last login</h3>
+  <div class="row">
+    <img src="{% static 'images/clock.png' %}"/>
+    <p id="time">  {{ user.last_login }}  </p>
+  </div>
+
+</div>
+
 {% endblock %}

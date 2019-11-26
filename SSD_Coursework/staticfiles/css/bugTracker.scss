@@ -284,7 +284,7 @@ body{
   padding-top: 1rem;
   padding-bottom: 2rem;
   &:hover{
-    background-color: darken(color(primary),20%);
+    background-color: color(accent);
   }
 }
 
@@ -320,10 +320,14 @@ body{
 /////////////////////////// START OF TICKETS ///////////////////////////////
 #create{
   position: absolute;
-  bottom: 3rem;
-  left: 25%;
+  top: 4rem;
+  right: 3rem;;
   height:1.5rem;
   line-height: 1.5rem;
+  background-color: color(accent);
+  &:hover{
+    background-color: color(accent-dark);
+  }
 }
 
 .ticket{
@@ -513,6 +517,51 @@ textarea{
 
 ////////////////////////////////// END OF TICKETS ////////////////////////////
 
+//////////////////////////////// START OF HOME //////////////////////////////
+
+.home-container{
+  h1{
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  h2{
+    font-size: 2.5rem;
+    color: darken(color(text),10%);
+    margin: 0;
+    margin-bottom: 6rem;
+  }
+  h3{
+    color: color(accent);
+    font-size: 2rem;
+  }
+  img{
+    width: 6rem;
+    height: 5.5rem;
+  }
+  p{
+    margin: 0;
+    background-color: color(primary);
+    color: white;
+    font-weight: bold;
+    font-size: 4rem;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    &#time{
+      margin-left: 1rem;
+      font-size: 2rem;
+      width: 15rem;
+      background-color: lighten(color(card),10%);
+    }
+  }
+  .row{
+    display: flex;
+  }
+}
+
+/////////////////////////////////// END OF HOME /////////////////////////////
+
 /////////////////////////// ANIMATIONS //////////////////////////////////////
 
 .shake{
@@ -549,3 +598,5 @@ textarea{
   75% { opacity: 1;}
   100% { opacity: 0;}
 }
+
+///////////////////////////////// END /////////////////////////////////////////
