@@ -17,6 +17,12 @@
     {% endfor %}
 
 
+    {% if messages %}
+      {% for message in messages %}
+        <div class="message"><h3>{{ message }}</h3></div>
+      {% endfor %}
+    {% endif %}
+
 </div>
 
 {% endblock %}

@@ -1,9 +1,10 @@
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 from .models import Ticket, Comment
 from .forms import CommentForm
+from django.contrib import messages
 
 # views here.
 @login_required
@@ -49,3 +50,39 @@ def details(request, ticketid):
 @login_required
 def settings(request):
     return render(request, 'tickets/settings.html', {'title': 'Settings'})
+
+def dev_test(user):
+    if not user.is_authenticated:
+        return false
+    else:
+        return user.role.title=="DEV"
+
+def tst_test(user):
+    if not user.is_authenticated:
+        return false
+    else:
+        return user.role.title=="TST"
+
+@user_passes_test(dev_test)
+def resolve(request, ticketid):
+    t = Ticket.objects.get(id=ticketid)
+    t.status="Resolved"
+    t.save()
+    messages.add_message(request, messages.SUCCESS, 'Ticket resolved.')
+    return redirect('../tickets/')
+
+@user_passes_test(tst_test)
+def reopen(request, ticketid):
+    t = Ticket.objects.get(id=ticketid)
+    t.status="Open"
+    t.save()
+    messages.add_message(request, messages.SUCCESS, 'Ticket reopened.')
+    return redirect('../tickets/')
+
+@user_passes_test(tst_test)
+def close(request, ticketid):
+    t = Ticket.objects.get(id=ticketid)
+    t.status="Closed"
+    t.save()
+    messages.add_message(request, messages.SUCCESS, 'Ticket closed.')
+    return redirect('../tickets/')

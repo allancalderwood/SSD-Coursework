@@ -24,6 +24,24 @@ body{
   }
 }
 
+.message{
+  border-radius: 1rem;
+  background-color: color(primary);
+  text-align: center;
+  height: 2.5rem;
+  color: white;
+  position: absolute;
+  bottom: 3rem;
+  left: 56%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  animation: inout 5s;
+  h3{
+    padding:0;
+  }
+}
+
 ////////////////////////// LOGIN CSS //////////////////////////////////
 
 #login-background{
@@ -117,33 +135,6 @@ body{
   }
 }
 
-.shake{
-  animation: shake 1s;
-}
-
-.errorShow{
-  animation: errorShow 1.5s;
-}
-
-@keyframes errorShow {
-    0% { background-color: lighten(color(danger),20%); }
-    50% { background-color: lighten(color(danger),20%); }
-    100% { background-color: lighten(color(text), 60%);}
-}
-
-@keyframes shake {
-  0% { transform: translate(1px, 1px); opacity: 0;}
-  10% { transform: translate(-1px, -2px) ; opacity: 0.2}
-  20% { transform: translate(-3px, 0px); opacity: 0.5}
-  30% { transform: translate(3px, 2px); opacity: 0.8}
-  40% { transform: translate(1px, -1px); opacity: 1}
-  50% { transform: translate(-1px, 2px); }
-  60% { transform: translate(-3px, 1px); }
-  70% { transform: translate(3px, 1px); }
-  80% { transform: translate(-1px, -1px); }
-  90% { transform: translate(1px, 2px); }
-  100% { transform: translate(1px, -2px); }
-}
 /////////////////////// END OF LOGIN //////////////////////////////////
 
 ////////////////////// LOGOUT CSS //////////////////////////////////////
@@ -391,6 +382,12 @@ body{
     color: color(primary-dark);
   }
   text-align: center;
+  h4{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    right: 30%;
+  }
   .status{
     position: absolute;
     bottom: 2rem;
@@ -422,22 +419,22 @@ body{
   }
 }
 
-.btn-blue{
+.btn-ticket{
   position: absolute;
-  bottom: 0.6rem;
+  bottom: 1.2rem;
   left: 1rem;
   font-size: 0.9rem;
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: color(accent);
+  background-color: color(primary);
   height: 1rem;
   color: white;
   font-weight: bold;
   border: 0;
   text-decoration: none;
   &:hover{
-    background-color: color(accent-dark);
+    background-color: color(primary-dark);
     transform: scale(1.1);
   }
 }
@@ -496,4 +493,43 @@ textarea{
   padding: 0.5rem;
   margin-bottom: 1rem;
   background-color: lighten(color(text), 80%);
+}
+
+////////////////////////////////// END OF TICKETS ////////////////////////////
+
+/////////////////////////// ANIMATIONS //////////////////////////////////////
+
+.shake{
+  animation: shake 1s;
+}
+
+.errorShow{
+  animation: errorShow 1.5s;
+}
+
+@keyframes errorShow {
+    0% { background-color: lighten(color(danger),20%); }
+    50% { background-color: lighten(color(danger),20%); }
+    100% { background-color: lighten(color(text), 60%);}
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px); opacity: 0;}
+  10% { transform: translate(-1px, -2px) ; opacity: 0.2}
+  20% { transform: translate(-3px, 0px); opacity: 0.5}
+  30% { transform: translate(3px, 2px); opacity: 0.8}
+  40% { transform: translate(1px, -1px); opacity: 1}
+  50% { transform: translate(-1px, 2px); }
+  60% { transform: translate(-3px, 1px); }
+  70% { transform: translate(3px, 1px); }
+  80% { transform: translate(-1px, -1px); }
+  90% { transform: translate(1px, 2px); }
+  100% { transform: translate(1px, -2px); }
+}
+
+@keyframes inout {
+  0% { opacity: 0;}
+  25% { opacity: 1;}
+  75% { opacity: 1;}
+  100% { opacity: 0;}
 }

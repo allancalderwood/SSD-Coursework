@@ -7,13 +7,13 @@
       <h1>Bug Ticket</h1>
 
       {% if role == "TST" and ticket.status == "Resolved" %}
-      <a href="../details/{{ticket.id}}" class="btn-blue">Close this ticket</a>
+      <a href="../close/{{ticket.id}}" class="btn-ticket">Close this ticket</a>
 
       {% elif role == "TST" and ticket.status == "Closed" %}
-      <a href="../details/{{ticket.id}}" class="btn-blue">Re-open this ticket</a>
+      <a href="../reopen/{{ticket.id}}" class="btn-ticket">Re-open this ticket</a>
 
       {% elif role == "DEV" and ticket.status == "Open" %}
-      <a href="../details/{{ticket.id}}" class="btn-blue">Resolve this ticket</a>
+      <a href="../resolve/{{ticket.id}}" class="btn-ticket">Resolve this ticket</a>
       {% endif %}
 
       <h2 class="status">Status: {{ticket.status}}</h2>
@@ -22,7 +22,7 @@
       <h2 class="time">Created: {{ticket.time}}</h2>
       <h3>Description: </h3>
       <p>{{ticket.description}}</p>
-      <br><br>
+      <br><br><br><br><br><br>
       <h4>Developer assigned: <span style="font-weight:normal">{{dev.get_full_name}}</span></h4>
     {% endfor %}
     </div>

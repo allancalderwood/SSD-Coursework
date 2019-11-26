@@ -30,11 +30,10 @@
       </div>
     </div>
 
-      {% if form.errors %}
-        <script src="{% static 'js/login.js' %}"></script>
-      {% endif %}
-
   </div>
+  {% if form.errors %}
+    <script src="{% static 'js/login.js' %}"></script>
+  {% endif %}
 
 </div>
 
