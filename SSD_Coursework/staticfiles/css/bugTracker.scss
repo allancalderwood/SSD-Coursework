@@ -1,12 +1,13 @@
 @import 'colors.scss';
 html{height:100%;
-  overflow: hidden}
+  }
 body{
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: "Open Sans", sans-serif;
-  overflow: hidden
+  background-color: color(background)
+
 }
 
 .btn{
@@ -218,7 +219,7 @@ body{
 }
 
 .sidebar{
-    position: relative;
+    position: fixed;
     background-color: color(sidebar);
     width: 20%;
     height: 100%;
@@ -305,10 +306,13 @@ body{
 }
 
 .cntn{
+  position: relative;
+  left:20%;
+  min-height: 100%;
   background-color: color(background);
-  width: 80%;
-  height: 100%;
-  padding: 2rem;
+  width: 76%;
+
+  padding: 2%;
   h1{
     font-size: 2.5rem;
     margin-bottom: 3rem;
@@ -437,6 +441,19 @@ body{
     padding: 0.3rem;
     background-color: #bbf9fc;
   }
+  label{
+    display:inline-block;
+    margin-bottom: 1rem ;
+  }
+  form{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    -webkit-user-select: none;
+    textarea{
+      background-color: darken(color(card),4%) !important;
+    }
+  }
 }
 
 .btn-ticket{
@@ -495,7 +512,7 @@ body{
   top: 1rem;
   left: 1rem;
   font-size: 0.9rem;
-  color: darken(white,45%);
+  color: color(accent);
   span{
     color: color(primary);
     }

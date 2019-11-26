@@ -32,11 +32,10 @@ def create(request):
         form = TicketForm(request.POST)
         if form.is_valid():
             extendedForm = form.save(commit=False)
-            extendedForm.userID=request.user
+            extendedForm.creatorID=request.user
             extendedForm.save()
     else:
          form = TicketForm()
-
 
     role = request.user.role.title
     return render(request, 'tickets/create.html', {'title': 'Create a ticket', 'role':role, 'form':form})
