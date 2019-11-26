@@ -27,7 +27,7 @@ SECRET_KEY = 'n&m7z%klaazi!&$!an+(=9u@96c=%0rd++8d**zs6@gddhh#oa'
 DEBUG = True
 
 # SESSION configs
-SESSION_COOKIE_AGE = 10*60 # i.e. 10 minute sessions
+SESSION_COOKIE_AGE = 5*60 # i.e. 5 minute sessions
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_SAVE_EVERY_REQUEST = True
 
