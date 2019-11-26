@@ -24,6 +24,9 @@ def tickets(request):
         tickets = Ticket.objects.filter(Q(status='Resolved') | Q(status='Closed'))
     else:
         tickets = Ticket.objects.filter(Q(creatorID=request.user.id) | Q(devID=request.user.id))
+    for ticket in tickets:
+        if (len(ticket.description) > 40):
+            ticket.description=ticket.description[:40]+"..."
     return render(request, 'tickets/tickets.html', {'title': 'Tickets', 'tickets': tickets,'role':role})
 
 @login_required
@@ -34,6 +37,8 @@ def create(request):
             extendedForm = form.save(commit=False)
             extendedForm.creatorID=request.user
             extendedForm.save()
+            messages.add_message(request, messages.SUCCESS, 'Ticket created.')
+            return redirect('../tickets/')
     else:
          form = TicketForm()
 

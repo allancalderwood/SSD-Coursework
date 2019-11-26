@@ -28,16 +28,17 @@ body{
 
 .message{
   border-radius: 1rem;
-  background-color: lighten(color(card),10%);
+  background-color: color(accent);
   text-align: center;
   height: 2.5rem;
   color: color(text);
-  position: absolute;
+  position: fixed;
   bottom: 3rem;
-  left: 56%;
+  left: 55%;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
+  margin-bottom: 5rem;
   animation: inout 5s forwards;
   h3{
     padding:0;
@@ -332,6 +333,11 @@ body{
   &:hover{
     background-color: color(accent-dark);
   }
+}
+
+#noTicket{
+    color: color(text);
+    font-size: 1.7rem;
 }
 
 .ticket{

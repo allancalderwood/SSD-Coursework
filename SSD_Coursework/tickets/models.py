@@ -44,7 +44,8 @@ class Ticket(models.Model):
     time = models.DateTimeField(auto_now=False, auto_now_add=True)
     status = models.CharField(
         max_length=8,
-        choices=STATUS
+        choices=STATUS,
+        default='Open',
     )
 
 

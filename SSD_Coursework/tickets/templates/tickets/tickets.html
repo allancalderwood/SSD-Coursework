@@ -23,6 +23,9 @@
             <a href="../details/{{ticket.id}}" class="btn">Open Ticket</a>
         </div>
     {% endfor %}
+    {% if tickets|length == 0 %}
+    <h2 id="noTicket">You have no tickets associated with your account</h2>
+    {% endif %}
 
 
     {% if messages %}
