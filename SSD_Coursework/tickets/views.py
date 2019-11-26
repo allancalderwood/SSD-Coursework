@@ -6,6 +6,7 @@ from .models import Ticket, Comment
 from .forms import CommentForm, TicketForm
 from django.contrib import messages
 
+
 # views here.
 @login_required
 def home(request):
@@ -29,6 +30,7 @@ def tickets(request):
         if (len(ticket.description) > 40):
             ticket.description=ticket.description[:40]+"..."
     return render(request, 'tickets/tickets.html', {'title': 'Tickets', 'tickets': filteredTickets,'role':role})
+
 
 @login_required
 def create(request):
