@@ -1,0 +1,19 @@
+{% extends "base_home.html" %}
+
+{% block content %}
+
+<div class="ticket-container">
+
+  <div class="ticket-details">
+    <h1>Bug Ticket</h1>
+
+    <form method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input class="btn" type="submit" value="Create"><br>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

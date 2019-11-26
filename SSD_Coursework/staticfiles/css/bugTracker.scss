@@ -306,7 +306,12 @@ body{
 //////////////////////////// END OF HOME //////////////////////////////////
 
 /////////////////////////// START OF TICKETS ///////////////////////////////
-.ticket-container{
+#create{
+  position: absolute;
+  bottom: 3rem;
+  left: 56%;
+  height:1.5rem;
+  line-height: 1.5rem;
 }
 
 .ticket{

@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 from .models import Ticket, Comment
-from .forms import CommentForm
+from .forms import CommentForm, TicketForm
 from django.contrib import messages
 
 # views here.
@@ -19,6 +19,21 @@ def tickets(request):
     else:
         tickets = Ticket.objects.filter(Q(creatorID=request.user.id) | Q(devID=request.user.id))
     return render(request, 'tickets/tickets.html', {'title': 'Tickets', 'tickets': tickets})
+
+@login_required
+def create(request):
+    if request.method == 'POST':
+        form = TicketForm(request.POST)
+        if form.is_valid():
+            extendedForm = form.save(commit=False)
+            extendedForm.userID=request.user
+            extendedForm.save()
+    else:
+         form = TicketForm()
+
+
+    role = request.user.role.title
+    return render(request, 'tickets/create.html', {'title': 'Create a ticket', 'role':role, 'form':form})
 
 
 @login_required

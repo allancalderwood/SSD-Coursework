@@ -7,3 +7,13 @@ class CommentForm(forms.ModelForm):
         fields = [
             'content',
         ]
+
+
+class TicketForm(forms.ModelForm):
+    class Meta:
+        model = Ticket
+        fields = [
+            'description',
+            'priority',
+            'devID'
+        ]
