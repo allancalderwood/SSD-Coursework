@@ -13,6 +13,9 @@ def home(request):
     role = request.user.role.title
     if (role=="TST"):
         tickets = Ticket.objects.filter(Q(status='Resolved') | Q(status='Closed'))
+    elif (role=="DEV"):
+        ticketsUnfiltered = Ticket.objects.filter(Q(creatorID=request.user.id) | Q(devID=request.user.id))
+        tickets = ticketsUnfiltered.filter(status="Open")
     else:
         tickets = Ticket.objects.filter(Q(creatorID=request.user.id) | Q(devID=request.user.id))
     return render(request, 'tickets/home.html', {'title': 'Home','tickets': tickets,'role':role})
