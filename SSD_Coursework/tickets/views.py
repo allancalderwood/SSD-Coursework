@@ -24,12 +24,12 @@ def tickets(request):
     if (role=="TST"):
         tickets = Ticket.objects.filter(Q(status='Resolved') | Q(status='Closed'))
     else:
-        tickets = Ticket.objects.filter(Q(creatorID=request.user.id) | Q(devID=request.user.id))
-        filteredTickets = tickets.filter(status="Open")
-    for ticket in filteredTickets:
+        ticketsUnfiltered = Ticket.objects.filter(Q(creatorID=request.user.id) | Q(devID=request.user.id))
+        tickets = ticketsUnfiltered.filter(status="Open")
+    for ticket in tickets:
         if (len(ticket.description) > 40):
             ticket.description=ticket.description[:40]+"..."
-    return render(request, 'tickets/tickets.html', {'title': 'Tickets', 'tickets': filteredTickets,'role':role})
+    return render(request, 'tickets/tickets.html', {'title': 'Tickets', 'tickets': tickets,'role':role})
 
 
 @login_required
@@ -69,7 +69,7 @@ def details(request, ticketid):
 
     role = request.user.role.title
     for comment in comments:
-        comment.author=get_user_model().objects.get(id=devID)
+        comment.author=get_user_model().objects.get(id=comment.userID.id)
 
     return render(request, 'tickets/details.html', {'title': 'Ticket Details',
     'details': details, 'dev': dev, 'comments':comments, 'role':role})
