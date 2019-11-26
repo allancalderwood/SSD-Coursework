@@ -18,14 +18,13 @@
     <img src="{% static 'images/dev.png' %}"/>
   {% else %}
     <p> Client  </p>
-    <img src="{% static 'images/user.png' %}"/>
+    <img src="{% static 'images/client.png' %}"/>
   {% endif %}
   </div>
 
   <h3>Email</h3>
   <div class="row">
     <p>{{request.user.email}}</p>
-    <a href="" class="btn">Update</a>
   </div>
 
   <h3>Name</h3>
