@@ -423,6 +423,8 @@ body{
     }
   }
   p{
+    margin:0;
+    margin-top: 1rem;
     word-wrap: break-word;
   }
   .status{
@@ -459,13 +461,21 @@ body{
     margin-bottom: 1rem ;
   }
   form{
+    text-align:left;
     margin: 0;
     padding: 0;
     list-style: none;
     -webkit-user-select: none;
+    .btn{
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      width: 5rem;
+    }
     textarea{
       background-color: darken(color(card),4%) !important;
     }
+
     select{
        appearance: none;
        background-color: darken(color(card),5%);
@@ -476,15 +486,6 @@ body{
        &:focus{
          outline: 0;
        }
-    }
-    ul{
-      display: flex;
-      list-style-type: none;
-      margin-left: 30%;
-      width: 37%;
-      li{
-        padding-left: 1%;
-      }
     }
   }
 }

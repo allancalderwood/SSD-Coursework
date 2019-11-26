@@ -16,13 +16,13 @@ class TicketForm(forms.ModelForm):
         ('Medium', 'Medium'),
         ('High', 'High'),
     ]
-    priority = forms.ChoiceField(choices=PRIORITY, widget=forms.RadioSelect(),required = True,initial='Low')
+    priority = forms.ChoiceField(choices=PRIORITY,required = True,initial='Low')
     class Meta:
         model = Ticket
         fields = [
             'description',
+            'devID',
             'priority',
-            'devID'
         ]
         labels = {
             'devID': ('Developer'),
