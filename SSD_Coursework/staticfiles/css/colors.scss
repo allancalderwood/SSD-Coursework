@@ -3,11 +3,12 @@ $colors:(
   primary-dark: darken(#64e3b9, 15%),
   accent: #3870ff,
   accent-dark: darken(#3870ff, 15%),
-  text: #4a4a4a,
-  background: #f7faff,
+  text: darken(white,5%),
+  background: darken(#2a2b33,5%),
   header: #2e2e2e,
   sidebar: #2a2b33,
   danger: #e74c3c,
+  card: lighten(#2a2b33,15%),
 );
 
 @function color($color-name){

@@ -1,11 +1,12 @@
 @import 'colors.scss';
-html{height:100%}
+html{height:100%;
+  overflow: hidden}
 body{
   margin: 0;
   padding: 0;
   height: 100%;
-  color: color(text);
   font-family: "Open Sans", sans-serif;
+  overflow: hidden
 }
 
 .btn{
@@ -14,7 +15,7 @@ body{
   border-radius: 0.5rem;
   background-color: color(primary);
   height: 2.5rem;
-  color: white;
+  color: color(text);
   font-weight: bold;
   border: 0;
   text-decoration: none;
@@ -26,17 +27,17 @@ body{
 
 .message{
   border-radius: 1rem;
-  background-color: color(primary);
+  background-color: lighten(color(card),10%);
   text-align: center;
   height: 2.5rem;
-  color: white;
+  color: color(text);
   position: absolute;
   bottom: 3rem;
   left: 56%;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
-  animation: inout 5s;
+  animation: inout 5s forwards;
   h3{
     padding:0;
   }
@@ -48,7 +49,7 @@ body{
   height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: linear-gradient(295deg, color(primary) 0%, color(accent) 100%);
+  background-image: linear-gradient(295deg, color(primary-dark) 0%, lighten(color(card),10%) 60%);
 }
 
 #login-container{
@@ -71,7 +72,7 @@ body{
     font-weight:100;
     margin-bottom: 3rem;
     b{
-      color: color(accent);
+      color: color(primary);
     }
   }
 }
@@ -79,22 +80,25 @@ body{
 #login-form{
   width: 100%;
   border-radius: 0.4rem;
-  background-color: white;
+  background-color: color(card);
+  color: color(text);
   box-shadow: -0.06rem 0.06rem 5.2rem -0.6rem rgba(0,0,0,0.6);
   margin: auto;
   text-align: center;
   display: flex;
 
   #form-view{
-    padding-left: 1rem;
+    background-color: color(primary);
+    padding-top: 2rem;
+    padding-left: 0rem;
     width:50%;
     img{
-      width: 25rem;
-      height: 25rem;
+      width: 24rem;
+      height: 20rem;
     }
     span{
       font-weight: bold;
-      color: color(primary);
+      color: color(card);
     }
   }
 
@@ -121,7 +125,7 @@ body{
       }
       &#forgotPass{
         cursor: pointer;
-        background: white;
+        background: color(text);
       }
       &.btn{
         background-color: color(primary) !important;
@@ -148,13 +152,13 @@ body{
     width: 15rem;
   }
   h1{
-    color: white;
+    color: color(text);
     font-weight: bold;
     font-size: 3rem;
   }
   a{
     text-decoration: none;
-    color: white;
+    color: color(text);
   }
 }
  ////////////////// END OF LOGOUT ///////////////////////////////
@@ -164,7 +168,8 @@ body{
 #password-form{
   width: 100%;
   border-radius: 0.4rem;
-  background-color: white;
+  background-color: color(card);
+  color:color(text);
   box-shadow: -0.06rem 0.06rem 5.2rem -0.6rem rgba(0,0,0,0.6);
   margin: auto;
   padding: 2rem;
@@ -194,7 +199,8 @@ body{
 #password-form{
   width: 100%;
   border-radius: 0.4rem;
-  background-color: white;
+  background-color: color(card);
+  color:color(text);
   box-shadow: -0.06rem 0.06rem 5.2rem -0.6rem rgba(0,0,0,0.6);
   margin: auto;
   text-align: center;
@@ -217,13 +223,14 @@ body{
     width: 20%;
     height: 100%;
     text-align: center;
+    color: color(text);
 
   #logo{
     margin-top: 2rem;
     a{
       text-decoration: none;
       font-weight: bold;
-      color: white;
+      color: color(text);
       font-size: 2rem;
     }
     span{
@@ -232,7 +239,7 @@ body{
   }
 
   h3{
-    color: white;
+    color: color(text);
     opacity: 0.3;
     font-size: 0.9rem;
     font-weight: bold;
@@ -256,7 +263,7 @@ body{
       }
       a{
         text-decoration: none;
-        color: color(background);
+        color: color(text);
         font-size: 1.5rem;
       }
       img{
@@ -275,7 +282,7 @@ body{
   width:100%;
   background-color: lighten(color(sidebar),3%);
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   &:hover{
     background-color: darken(color(primary),20%);
   }
@@ -284,7 +291,7 @@ body{
 #logout{
   height:2rem;
   text-decoration: none;
-  color: white;
+  color: color(text);
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -302,6 +309,11 @@ body{
   width: 80%;
   height: 100%;
   padding: 2rem;
+  h1{
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: color(primary);
+  }
 }
 //////////////////////////// END OF HOME //////////////////////////////////
 
@@ -309,7 +321,7 @@ body{
 #create{
   position: absolute;
   bottom: 3rem;
-  left: 56%;
+  left: 25%;
   height:1.5rem;
   line-height: 1.5rem;
 }
@@ -317,7 +329,7 @@ body{
 .ticket{
   float:left;
   position: relative;
-  background-color: white;
+  background-color: color(card);
   border-radius: 0.5rem;
   padding: 1rem;
   color: color(text);
@@ -326,7 +338,6 @@ body{
   margin-bottom: 1%;
   text-align: center;
   height: 20rem;
-  box-shadow: -0.02rem -0.02rem 3.2rem -0.02rem rgba(0,0,0,0.6);
 
   h1{
     color: color(primary-dark);
@@ -365,7 +376,7 @@ body{
   .Low{
     border-radius: 1rem;
     padding: 0.3rem;
-    background-color: #bbf9fc;
+    background-color: #d1d08a;
   }
   .btn{
     position: absolute;
@@ -379,10 +390,10 @@ body{
   position: relative;
   width: 60%;
   margin: auto;
-  background-color: white;
+  background-color: color(card);
+  color: color(text);
   border-radius: 0.5rem;
   padding: 1rem;
-  box-shadow: -0.02rem -0.02rem 3.2rem -0.02rem rgba(0,0,0,0.6);
   h1{
     color: color(primary-dark);
   }
@@ -434,7 +445,7 @@ body{
   border-radius: 0.5rem;
   background-color: color(primary);
   height: 1rem;
-  color: white;
+  color: color(text);
   font-weight: bold;
   border: 0;
   text-decoration: none;
@@ -450,10 +461,10 @@ body{
   width: 60%;
   margin: auto;
   margin-top: 2rem;
-  background-color: white;
+  background-color: color(card);
+  color: color(text);
   border-radius: 0.5rem;
   padding: 1rem;
-  box-shadow: -0.02rem -0.02rem 3.2rem -0.02rem rgba(0,0,0,0.6);
 }
 
 .comment{
@@ -462,10 +473,9 @@ body{
   margin: auto;
   margin-top: 4rem;
   text-align: center;
-  background-color: white;
+  background-color: color(card);
   border-radius: 0.5rem;
   padding: 1rem;
-  box-shadow: -0.02rem -0.02rem 3.2rem -0.02rem rgba(0,0,0,0.6);
 }
 
 .time{
@@ -497,7 +507,8 @@ textarea{
   width: 98%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  background-color: lighten(color(text), 80%);
+  background-color: color(card);
+  color: color(text);
 }
 
 ////////////////////////////////// END OF TICKETS ////////////////////////////

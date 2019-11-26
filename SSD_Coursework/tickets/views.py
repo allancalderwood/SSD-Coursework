@@ -14,11 +14,12 @@ def home(request):
 
 @login_required
 def tickets(request):
-    if (request.user.role.title=="TST"):
+    role = request.user.role.title
+    if (role=="TST"):
         tickets = Ticket.objects.filter(Q(status='Resolved') | Q(status='Closed'))
     else:
         tickets = Ticket.objects.filter(Q(creatorID=request.user.id) | Q(devID=request.user.id))
-    return render(request, 'tickets/tickets.html', {'title': 'Tickets', 'tickets': tickets})
+    return render(request, 'tickets/tickets.html', {'title': 'Tickets', 'tickets': tickets,'role':role})
 
 @login_required
 def create(request):

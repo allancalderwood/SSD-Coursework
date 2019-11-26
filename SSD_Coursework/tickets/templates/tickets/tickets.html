@@ -4,6 +4,14 @@
 
 <div class="ticket-container">
 
+    {% if role == "TST" %}
+    <h1>Resolved and closed tickets</h1>
+    {% elif role == "DEV" %}
+    <h1>Your associated tickets</h1>
+    {% else %}
+    <h1>Your created tickets</h1>
+    {% endif %}
+
     {% for ticket in tickets %}
         <div class="ticket">
             <h1>Bug Ticket</h1>
