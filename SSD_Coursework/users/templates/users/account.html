@@ -1,5 +1,45 @@
 {% extends "base_home.html" %}
 
 {% block content %}
-<h1>Account</h1>
+
+<div class="account-container">
+
+  <h1>Account</h1>
+  <h2>{{ request.user.username}}</h2>
+
+  {% load static %}
+  <h3>Account Type</h3>
+  <div class="row">
+  {% if request.user.role.title == "TST" %}
+    <p> Tester </p>
+    <img src="{% static 'images/test.png' %}"/>
+  {% elif request.user.role.title == "DEV" %}
+    <p> Developer </p>
+    <img src="{% static 'images/dev.png' %}"/>
+  {% else %}
+    <p> Client  </p>
+    <img src="{% static 'images/user.png' %}"/>
+  {% endif %}
+  </div>
+
+  <h3>Email</h3>
+  <div class="row">
+    <p>{{request.user.email}}</p>
+    <a href="../details/{{ticket.id}}" class="btn">Update</a>
+  </div>
+
+  <h3>Name</h3>
+  <div class="row">
+    <p>{{request.user.get_full_name}}</p>
+  </div>
+
+  <h3>Date Joined</h3>
+  <div class="row">
+    <p>{{request.user.date_joined}}</p>
+  </div><br><br><br><br><br><br>
+
+  <a id="pBtn" href="{% url 'password_reset' %}" class="btn">Change Password</a>
+
+</div>
+
 {% endblock %}
