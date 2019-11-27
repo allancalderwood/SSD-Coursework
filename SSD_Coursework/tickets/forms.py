@@ -1,5 +1,6 @@
 from django import forms
 from .models import Ticket, Comment
+from django.contrib.auth import get_user_model
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -27,3 +28,7 @@ class TicketForm(forms.ModelForm):
         labels = {
             'devID': ('Developer'),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(TicketForm, self).__init__(*args, **kwargs)
+        self.fields['devID'].queryset = get_user_model().objects.filter(role__title='DEV')
