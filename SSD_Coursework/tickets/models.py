@@ -35,7 +35,7 @@ class Ticket(models.Model):
         related_name='+'
     )
 
-    description = models.TextField()
+    description = models.TextField(max_length=1000)
     priority = models.CharField(
         max_length=7,
         choices=PRIORITY
@@ -51,7 +51,7 @@ class Ticket(models.Model):
 
 class Comment(models.Model):
     ticketID = models.ForeignKey(Ticket, on_delete=models.CASCADE)
-    content = models.TextField()
+    content = models.TextField(max_length=1000)
     time = models.DateTimeField(auto_now=False, auto_now_add=True)
     userID = models.ForeignKey(
         settings.AUTH_USER_MODEL,
