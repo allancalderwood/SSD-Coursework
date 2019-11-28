@@ -40,7 +40,7 @@
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div class="ticket-container">
-  {% if user.role.title == 'DEV' %}
+  {% if user.role.title == 'DEV' and ticketsAll|length != 0 %}
   <h2 id="noTicket">All Open Tickets</h2>
   {% for ticket in ticketsAll %}
     <div class="ticket">
