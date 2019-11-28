@@ -14,6 +14,7 @@
 
     {% for ticket in tickets %}
         <div class="ticket">
+            <h1 id="ticketID">Ticket #{{ticket.id}}</h1>
             <h1>{{ticket.stage}}</h1>
             <h3>Description:<h3>
             <p>{{ticket.description}}</p>
@@ -43,6 +44,7 @@
   <h2 id="noTicket">All Tickets</h2>
   {% for ticket in ticketsAll %}
     <div class="ticket">
+        <h1 id="ticketID">Ticket #{{ticket.id}}</h1>
         <h1>{{ticket.stage}}</h1>
         <h3>Description:<h3>
         <p>{{ticket.description}}</p>
