@@ -78,8 +78,13 @@ def details(request, ticketid):
     for comment in comments:
         comment.author=get_user_model().objects.get(id=comment.userID.id)
 
+    if (request.user == details[0].devID):
+        creator=True
+    else:
+        creator=False
+
     return render(request, 'tickets/details.html', {'title': 'Ticket Details',
-    'details': details, 'dev': dev, 'comments':comments, 'role':role})
+    'details': details, 'dev': dev, 'comments':comments, 'role':role,'creator':creator})
 
 
 @login_required

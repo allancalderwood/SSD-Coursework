@@ -12,7 +12,7 @@
       {% elif role == "TST" and ticket.status == "Closed" %}
       <a href="../reopen/{{ticket.id}}" class="btn-ticket">Re-open this ticket</a>
 
-      {% elif role == "DEV" and ticket.status == "Open" %}
+      {% elif role == "DEV" and ticket.status == "Open" and creator %}
       <a href="../resolve/{{ticket.id}}" class="btn-ticket">Resolve this ticket</a>
       {% endif %}
 
