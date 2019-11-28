@@ -29,7 +29,7 @@ def tickets(request):
     else:
         ticketsUnfiltered = Ticket.objects.filter(Q(creatorID=request.user.id) | Q(devID=request.user.id))
         tickets = ticketsUnfiltered.filter(status="Open")
-    ticketsAll = Ticket.objects.all()
+    ticketsAll = Ticket.objects.filter(status='Open')
     for ticket in tickets:
         if (len(ticket.description) > 40):
             ticket.description=ticket.description[:40]+"..."

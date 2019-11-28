@@ -41,7 +41,7 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div class="ticket-container">
   {% if user.role.title == 'DEV' %}
-  <h2 id="noTicket">All Tickets</h2>
+  <h2 id="noTicket">All Open Tickets</h2>
   {% for ticket in ticketsAll %}
     <div class="ticket">
         <h1 id="ticketID">Ticket #{{ticket.id}}</h1>
