@@ -23,6 +23,15 @@ class Ticket(models.Model):
         (CLS, 'Closed'),
     ]
 
+    DEV = 'Development'
+    TEST = 'Testing'
+    PRO = 'Production'
+    STAGE = [
+        (DEV, 'Development'),
+        (TEST, 'Testing'),
+        (PRO, 'Production'),
+    ]
+
     creatorID = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -46,6 +55,11 @@ class Ticket(models.Model):
         max_length=8,
         choices=STATUS,
         default='Open',
+    )
+    stage = models.CharField(
+        max_length=11,
+        choices=STAGE,
+        default='Development',
     )
 
 

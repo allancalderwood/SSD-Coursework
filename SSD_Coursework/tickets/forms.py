@@ -17,13 +17,20 @@ class TicketForm(forms.ModelForm):
         ('Medium', 'Medium'),
         ('High', 'High'),
     ]
+    STAGE = [
+        ('Development', 'Development'),
+        ('Testing', 'Testing'),
+        ('Production', 'Production'),
+    ]
     priority = forms.ChoiceField(choices=PRIORITY,required = True,initial='Low')
+    stage = forms.ChoiceField(choices=STAGE,required = True,initial='Development')
     class Meta:
         model = Ticket
         fields = [
             'description',
             'devID',
             'priority',
+            'stage',
         ]
         labels = {
             'devID': ('Developer'),

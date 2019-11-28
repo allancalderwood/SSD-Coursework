@@ -14,7 +14,7 @@
 
     {% for ticket in tickets %}
         <div class="ticket">
-            <h1>Bug Ticket</h1>
+            <h1>{{ticket.stage}}</h1>
             <h3>Description:<h3>
             <p>{{ticket.description}}</p>
             <h2 class="status">Status: {{ticket.status}}</h2>
@@ -37,5 +37,21 @@
     <a id="create" href="../create" class="btn">Create a Ticket</a>
 
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="ticket-container">
+  {% if user.role.title == 'DEV' %}
+  <h2 id="noTicket">All Tickets</h2>
+  {% for ticket in ticketsAll %}
+    <div class="ticket">
+        <h1>{{ticket.stage}}</h1>
+        <h3>Description:<h3>
+        <p>{{ticket.description}}</p>
+        <h2 class="status">Status: {{ticket.status}}</h2>
+        <h2 class="priority">Priority: <span class="{{ticket.priority}}">{{ticket.priority}}</span></h2>
 
+        <a href="../details/{{ticket.id}}" class="btn">Open Ticket</a>
+    </div>
+  {% endfor %}
+  {% endif %}
+</div>
 {% endblock %}

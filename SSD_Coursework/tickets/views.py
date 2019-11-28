@@ -29,10 +29,14 @@ def tickets(request):
     else:
         ticketsUnfiltered = Ticket.objects.filter(Q(creatorID=request.user.id) | Q(devID=request.user.id))
         tickets = ticketsUnfiltered.filter(status="Open")
+    ticketsAll = Ticket.objects.all()
     for ticket in tickets:
         if (len(ticket.description) > 40):
             ticket.description=ticket.description[:40]+"..."
-    return render(request, 'tickets/tickets.html', {'title': 'Tickets', 'tickets': tickets,'role':role})
+    for ticket in ticketsAll:
+        if (len(ticket.description) > 40):
+            ticket.description=ticket.description[:40]+"..."
+    return render(request, 'tickets/tickets.html', {'title': 'Tickets', 'tickets': tickets,'ticketsAll': ticketsAll,'role':role})
 
 
 @login_required

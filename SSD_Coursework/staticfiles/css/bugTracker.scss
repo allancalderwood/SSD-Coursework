@@ -535,9 +535,17 @@ body{
   padding: 1rem;
 }
 
+#noComment{
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  margin-top: 3rem;
+  color: color(text);
+}
+
 .time{
   position: absolute;
-  top: 1rem;
+  top: 0.2rem;
   right: 1rem;
   font-size: 0.9rem;
   color: darken(white,45%);
